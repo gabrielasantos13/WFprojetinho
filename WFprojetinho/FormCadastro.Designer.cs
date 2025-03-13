@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             lblNome = new Label();
-            btnCadastrar = new Button();
+            btnSalvar = new Button();
             txtNome = new TextBox();
             label1 = new Label();
             txtSobrenome = new TextBox();
@@ -38,33 +38,38 @@
             rdbRecado = new RadioButton();
             rdbComercial = new RadioButton();
             rdbPessoal = new RadioButton();
-            label3 = new Label();
+            lblLinha = new Label();
             txtEmail = new TextBox();
             lblEmail = new Label();
             btnVoltar = new Button();
+            lblDddTelefone = new Label();
+            mkbTelefone = new MaskedTextBox();
             gbxTipoTelefone.SuspendLayout();
             SuspendLayout();
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
+            lblNome.BackColor = Color.FromArgb(192, 192, 255);
             lblNome.Location = new Point(36, 30);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(43, 15);
             lblNome.TabIndex = 0;
             lblNome.Text = "Nome ";
-            lblNome.Click += lblNomeCompleto_Click;
+         
             // 
-            // btnCadastrar
+            // btnSalvar
             // 
-            btnCadastrar.BackColor = SystemColors.ActiveCaptionText;
-            btnCadastrar.Location = new Point(269, 400);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(94, 35);
-            btnCadastrar.TabIndex = 1;
-            btnCadastrar.Text = "Salvar";
-            btnCadastrar.UseVisualStyleBackColor = false;
-            btnCadastrar.Click += btnCadastrar_Click;
+            btnSalvar.BackColor = Color.Purple;
+            btnSalvar.ForeColor = Color.White;
+            btnSalvar.ImageAlign = ContentAlignment.MiddleRight;
+            btnSalvar.Location = new Point(258, 400);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(112, 35);
+            btnSalvar.TabIndex = 1;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = false;
+          
             // 
             // txtNome
             // 
@@ -88,21 +93,22 @@
             txtSobrenome.Name = "txtSobrenome";
             txtSobrenome.Size = new Size(157, 23);
             txtSobrenome.TabIndex = 10;
-            txtSobrenome.TextChanged += textBox1_TextChanged;
+           
             // 
             // lblSobrenome
             // 
             lblSobrenome.AutoSize = true;
+            lblSobrenome.BackColor = Color.FromArgb(192, 192, 255);
             lblSobrenome.Location = new Point(206, 30);
             lblSobrenome.Name = "lblSobrenome";
             lblSobrenome.Size = new Size(68, 15);
             lblSobrenome.TabIndex = 9;
             lblSobrenome.Text = "Sobrenome";
-            lblSobrenome.Click += label2_Click;
+           
             // 
             // gbxTipoTelefone
             // 
-            gbxTipoTelefone.BackColor = SystemColors.AppWorkspace;
+            gbxTipoTelefone.BackColor = SystemColors.InactiveCaption;
             gbxTipoTelefone.Controls.Add(rdbRecado);
             gbxTipoTelefone.Controls.Add(rdbComercial);
             gbxTipoTelefone.Controls.Add(rdbPessoal);
@@ -148,29 +154,30 @@
             rdbPessoal.TabStop = true;
             rdbPessoal.Text = "Pessoal";
             rdbPessoal.UseVisualStyleBackColor = true;
-            rdbPessoal.CheckedChanged += radioButton1_CheckedChanged;
+       
             // 
-            // label3
+            // lblLinha
             // 
-            label3.BackColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(5, 194);
-            label3.Name = "label3";
-            label3.Size = new Size(400, 1);
-            label3.TabIndex = 12;
-            label3.Text = "label3";
+            lblLinha.BackColor = SystemColors.ButtonHighlight;
+            lblLinha.Location = new Point(-2, 192);
+            lblLinha.Name = "lblLinha";
+            lblLinha.Size = new Size(400, 1);
+            lblLinha.TabIndex = 12;
+            lblLinha.Text = "label3";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(36, 289);
+            txtEmail.Location = new Point(36, 300);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(327, 23);
             txtEmail.TabIndex = 14;
-            txtEmail.TextChanged += textBox2_TextChanged;
+       
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(36, 261);
+            lblEmail.BackColor = Color.FromArgb(192, 192, 255);
+            lblEmail.Location = new Point(36, 282);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(41, 15);
             lblEmail.TabIndex = 13;
@@ -178,35 +185,61 @@
             // 
             // btnVoltar
             // 
-            btnVoltar.BackColor = SystemColors.ActiveCaptionText;
-            btnVoltar.Location = new Point(36, 400);
+            btnVoltar.BackColor = Color.Purple;
+            btnVoltar.Location = new Point(41, 400);
             btnVoltar.Name = "btnVoltar";
             btnVoltar.Size = new Size(94, 35);
             btnVoltar.TabIndex = 15;
             btnVoltar.Text = "Voltar";
             btnVoltar.UseVisualStyleBackColor = false;
+        ;
+            // 
+            // lblDddTelefone
+            // 
+            lblDddTelefone.AutoSize = true;
+            lblDddTelefone.BackColor = Color.FromArgb(192, 192, 255);
+            lblDddTelefone.ForeColor = Color.White;
+            lblDddTelefone.Location = new Point(36, 219);
+            lblDddTelefone.Name = "lblDddTelefone";
+            lblDddTelefone.Size = new Size(78, 15);
+            lblDddTelefone.TabIndex = 16;
+            lblDddTelefone.Text = "Ddd/Telefone";
+            // 
+            // mkbTelefone
+            // 
+            mkbTelefone.Location = new Point(36, 237);
+            mkbTelefone.Mask = "(99) 00000-0000";
+            mkbTelefone.Name = "mkbTelefone";
+            mkbTelefone.Size = new Size(100, 23);
+            mkbTelefone.TabIndex = 17;
             // 
             // FormCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(417, 489);
+            BackColor = Color.FromArgb(255, 192, 192);
+            ClientSize = new Size(397, 477);
+            Controls.Add(mkbTelefone);
+            Controls.Add(lblDddTelefone);
             Controls.Add(btnVoltar);
             Controls.Add(txtEmail);
             Controls.Add(lblEmail);
-            Controls.Add(label3);
+            Controls.Add(lblLinha);
             Controls.Add(gbxTipoTelefone);
             Controls.Add(txtSobrenome);
             Controls.Add(lblSobrenome);
             Controls.Add(label1);
             Controls.Add(txtNome);
-            Controls.Add(btnCadastrar);
+            Controls.Add(btnSalvar);
             Controls.Add(lblNome);
             ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormCadastro";
-            Text = "FormCadastro";
-            Load += FormCadastro_Load;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Cadastro";
+       
             gbxTipoTelefone.ResumeLayout(false);
             gbxTipoTelefone.PerformLayout();
             ResumeLayout(false);
@@ -216,7 +249,7 @@
         #endregion
 
         private Label lblNome;
-        private Button btnCadastrar;
+        private Button btnSalvar;
         private TextBox txtNome;
         private Label label1;
         private TextBox txtSobrenome;
@@ -225,9 +258,11 @@
         private RadioButton rdbPessoal;
         private RadioButton rdbComercial;
         private RadioButton rdbRecado;
-        private Label label3;
+        private Label lblLinha;
         private TextBox txtEmail;
         private Label lblEmail;
         private Button btnVoltar;
+        private Label lblDddTelefone;
+        private MaskedTextBox mkbTelefone;
     }
 }

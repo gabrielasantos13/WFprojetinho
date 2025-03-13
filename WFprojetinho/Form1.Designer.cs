@@ -1,6 +1,6 @@
 ﻿namespace WFprojetinho
 {
-    partial class Form1
+    partial class form
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
-            mnsCadastro = new ToolStripMenuItem();
+            MenuPrincipal = new MenuStrip();
+            mnsCadastrar = new ToolStripMenuItem();
             mnsSobre = new ToolStripMenuItem();
             mnsSair = new ToolStripMenuItem();
-            pictureBox1 = new PictureBox();
-            menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            picfoto = new PictureBox();
+            MenuPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picfoto).BeginInit();
             SuspendLayout();
             // 
-            // menuStrip1
+            // MenuPrincipal
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnsCadastro, mnsSobre, mnsSair });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(346, 24);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "Nome Completo";
+            MenuPrincipal.Items.AddRange(new ToolStripItem[] { mnsCadastrar, mnsSobre, mnsSair });
+            MenuPrincipal.Location = new Point(0, 0);
+            MenuPrincipal.Name = "MenuPrincipal";
+            MenuPrincipal.Size = new Size(346, 24);
+            MenuPrincipal.TabIndex = 0;
+            MenuPrincipal.Text = "Nome Completo";
             // 
-            // mnsCadastro
+            // mnsCadastrar
             // 
-            mnsCadastro.Name = "mnsCadastro";
-            mnsCadastro.Size = new Size(66, 20);
-            mnsCadastro.Text = "Cadastro";
-            mnsCadastro.Click += nomeCompletoToolStripMenuItem_Click;
+            mnsCadastrar.Name = "mnsCadastrar";
+            mnsCadastrar.Size = new Size(66, 20);
+            mnsCadastrar.Text = "Cadastro";
+            mnsCadastrar.Click += nomeCompletoToolStripMenuItem_Click;
             // 
             // mnsSobre
             // 
@@ -66,41 +66,45 @@
             mnsSair.Text = "Sair";
             mnsSair.Click += sairToolStripMenuItem_Click;
             // 
-            // pictureBox1
+            // picfoto
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.cc82128aaa8e1387b665684dd5e63b21;
-            pictureBox1.Location = new Point(0, 24);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(346, 383);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            picfoto.Dock = DockStyle.Fill;
+            picfoto.Image = Properties.Resources.cc82128aaa8e1387b665684dd5e63b21;
+            picfoto.Location = new Point(0, 24);
+            picfoto.Name = "picfoto";
+            picfoto.Size = new Size(346, 383);
+            picfoto.SizeMode = PictureBoxSizeMode.StretchImage;
+            picfoto.TabIndex = 1;
+            picfoto.TabStop = false;
+            picfoto.Click += pictureBox1_Click;
             // 
-            // Form1
+            // form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(346, 407);
-            Controls.Add(pictureBox1);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
-            Name = "Form1";
-            Text = "Form1";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Controls.Add(picfoto);
+            Controls.Add(MenuPrincipal);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MainMenuStrip = MenuPrincipal;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "form";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Menu Principal";
+            MenuPrincipal.ResumeLayout(false);
+            MenuPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picfoto).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem mnsCadastro;
+        private MenuStrip MenuPrincipal;
+        private ToolStripMenuItem mnsCadastrar;
         private ToolStripMenuItem mnsSobre;
         private ToolStripMenuItem mnsSair;
-        private PictureBox pictureBox1;
+        private PictureBox picfoto;
     }
 }

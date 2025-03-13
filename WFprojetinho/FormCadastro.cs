@@ -18,39 +18,86 @@ namespace WFprojetinho
         {
             InitializeComponent();
         }
-
-        private void cbxEscolaridade_limparformulario(object sender, EventArgs e)
+        public void erro(string mensagem)
         {
-            txtEmail.Clear();
-            txtNome.Clear();
-            gbxTipoTelefone.Controls.OfType<RadioButton>().ToList().ForEach(r => r.Checked = false);
-            txtNomeCompleto_TextChanged(sender, e);
+            MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
-
+        public void sucesso(string mensagem)
+        {
+            MessageBox.Show(mensagem, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+       
         private void txtNomeCompleto_TextChanged(object sender, EventArgs e)
         {
+            string semMascara = mkbTelefone.Text
+                .Replace("(", "")
+                .Replace(")", "")
+                .Replace("-", "")
+                .Replace(" ", "");
+                
             void txtNomeCompleto_TextChanged(object sender, EventArgs e)
             {
                 if (string.IsNullOrEmpty(txtNome.Text))
                 {
-                    btnCadastrar.Enabled = false;
+                    erro("Nome é obrigatório"); return;
                 }
-                else
+                else if (string.IsNullOrEmpty(txtEmail.Text))
                 {
-                    btnCadastrar.Enabled = true;
+                    erro("Campo Sobrenome esta vazio "); return;
+                }
+                else if (string.IsNullOrEmpty(txtEmail.Text))
+                {
+                    erro("Campo Telefone esta vazio "); return;
+                }
+                else if (string.IsNullOrEmpty(txtEmail.Text))
+                {
+                    erro("Campo Email esta vazio "); return;
+                }
+                else if (!rdbComercial.Checked || !rdbPessoal.Checked || !rdbRecado.Checked)
+                {
+                    erro("deve se marcar uma opção de tipo telefone"); return;
+                }
+
+                string tipoTelefone = "";
+
+                if (!rdbComercial.Checked && !rdbPessoal.Checked && !rdbRecado.Checked) 
+                {
+                    erro("deve se marcar um tipo de telefone!"); return;
+                }
+                {
+                    string dddTelefone =
+                        "(" + mkbTelefone.Text.Substring(0, 2) + ") "
+                        + mkbTelefone.Text.Substring(2, 5)
+                        + "-" + mkbTelefone.Text.Substring(7);
+
+                    string mensagem = $@"Nome completo: {txtNome.Text} {txtSobrenome} 
+                    tipo telefone: {gbxTipoTelefone}
+                    DddTelefone: {lblDddTelefone.Text}
+                    Email: {txtEmail.Text}";
+
+                    sucesso(mensagem);
+
                 }
             }
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
-        {
+        { 
+            Button btnCadastrar = new Button();
 
             if (string.IsNullOrEmpty(txtNome.Text))
             {
-                MessageBox.Show("Nome completo é obrigatório", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nome é obrigatório", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            else 
+            {
+                MessageBox.Show("cadastro feito com sucesso");
+                return;
+            }
+
+
+
 
 
 
@@ -85,6 +132,12 @@ namespace WFprojetinho
 
         private void label2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Button btnVoltar = new Button();
 
         }
     }

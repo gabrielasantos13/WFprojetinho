@@ -1,8 +1,8 @@
 namespace WFprojetinho
 {
-    public partial class Form1 : Form
+    public partial class form : Form
     {
-        public Form1()
+        public form()
         {
             InitializeComponent();
         }
